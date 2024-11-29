@@ -13,5 +13,4 @@ if user_query:
     else:
         response = chatbot_response(category)
         st.write(f"**Category:** {category}")
-        st.write(f"**Confidence:** {confidence:.2f}")
         st.write(f"**Response:** {response}")
