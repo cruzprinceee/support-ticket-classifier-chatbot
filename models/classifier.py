@@ -7,7 +7,7 @@ model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-unc
 
 # Define categories
 categories = {
-    0: "Billing Issue",
+    0: "Billing Inquiry",
     1: "Technical Issue",
     2: "Account Issue",
 }
