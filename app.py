@@ -2,7 +2,7 @@ import streamlit as st
 from models.classifier import classify_ticket
 from utils.helpers import chatbot_response
 
-st.title("Automated Support Ticket Chatbot")
+st.title("Support Bot")
 
 user_query = st.text_input("Enter your support ticket query:")
 if user_query:
