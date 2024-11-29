@@ -6,7 +6,7 @@ st.title("Support Bot")
 
 user_query = st.text_input("Enter your support ticket query:")
 if user_query:
-    category, confidence = classify_ticket_with_confidence(user_query, threshold=0.6)
+    category, confidence = classify_ticket_with_confidence(user_query, threshold=0.5)
     
     if category == "uncertain":
         st.write("I'm not sure about the exact issue. Let me route this to a human representative.")
