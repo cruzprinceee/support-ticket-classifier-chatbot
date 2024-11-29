@@ -1,25 +1,12 @@
 import streamlit as st
 from models.classifier import classify_ticket
+from utils.helpers import chatbot_response
 
-# Define responses for different categories
-responses = {
-    0: "It seems like you’re facing a billing inquiry. Please contact our billing department.",
-    1: "This appears to be a technical issue. Restarting your device might help.",
-    # Add other responses for other categories
-}
+st.title("Automated Support Ticket Chatbot")
 
-# Streamlit interface
-st.title("Support Bot")
-
-# User input
 user_query = st.text_input("Enter your support ticket query:")
-
 if user_query:
-    # Classify the query
     category = classify_ticket(user_query)
-
-    # Provide response based on classification
-    response = responses.get(category, "We’re here to assist you. Please provide more details!")
-    
+    response = chatbot_response(category, user_query)
     st.write(f"**Category:** {category}")
     st.write(f"**Response:** {response}")

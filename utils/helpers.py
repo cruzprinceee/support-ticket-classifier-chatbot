@@ -1,10 +1,9 @@
-# Define predefined responses
+# Predefined responses
 responses = {
-    "Billing Issue": "It seems like you’re facing a billing issue. Please contact our billing department.",
-    "Technical Issue": "This appears to be a technical issue. Restarting your device might help.",
-    "Account Issue": "You seem to have an account-related issue. Try resetting your password here: [Reset Password Link]",
-    "Unknown": "I couldn’t classify your query. Let me connect you with a human representative.",
+    0: "It seems like you’re facing a billing issue. Please contact our billing department.",
+    1: "This appears to be a technical issue. Restarting your device might help.",
 }
 
-def chatbot_response(category):
+def chatbot_response(category, user_query):
     return responses.get(category, "We’re here to assist you. Please provide more details!")
+
