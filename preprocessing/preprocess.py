@@ -46,6 +46,6 @@ def load_and_preprocess_data(filepath):
 
 # Example usage
 if __name__ == "__main__":
-    data = load_and_preprocess_data("support_tickets.csv")
+    data = load_and_preprocess_data("customer_support_tickets.csv")
     data.to_csv("cleaned_support_tickets.csv", index=False)
     print(data.head())
