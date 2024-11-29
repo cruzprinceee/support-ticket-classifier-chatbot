@@ -5,7 +5,7 @@ import torch
 from transformers import Trainer, TrainingArguments
 
 # Load and preprocess data
-train_data, val_data, test_data, label_mapping = load_and_preprocess_data("data/customer_support_tickets.csv")
+train_data, val_data, test_data, label_mapping = load_and_preprocess_data("/workspaces/support-ticket-classifier-chatbot/dataset/customer_support_tickets.csv")
 
 # Load tokenizer
 tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
