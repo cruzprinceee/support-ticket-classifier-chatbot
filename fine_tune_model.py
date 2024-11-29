@@ -46,5 +46,5 @@ trainer = Trainer(
 trainer.train()
 
 # Save the fine-tuned model
-model.save_pretrained("./fine_tuned_model")
-tokenizer.save_pretrained("./fine_tuned_model")
+model.save_pretrained("/workspaces/support-ticket-classifier-chatbot/fine_tune_model.py")
+tokenizer.save_pretrained("/workspaces/support-ticket-classifier-chatbot/fine_tune_model.py")

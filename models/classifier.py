@@ -2,8 +2,8 @@ from transformers import DistilBertTokenizer, DistilBertForSequenceClassificatio
 import torch
 
 # Load fine-tuned model and tokenizer
-tokenizer = DistilBertTokenizer.from_pretrained("./fine_tuned_model")
-model = DistilBertForSequenceClassification.from_pretrained("./fine_tuned_model")
+tokenizer = DistilBertTokenizer.from_pretrained("/workspaces/support-ticket-classifier-chatbot/fine_tune_model.py")
+model = DistilBertForSequenceClassification.from_pretrained("/workspaces/support-ticket-classifier-chatbot/fine_tune_model.py")
 
 # Map labels back to categories
 categories = {
