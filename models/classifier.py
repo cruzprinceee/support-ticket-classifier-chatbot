@@ -12,7 +12,7 @@ categories = {
     2: "Account Issue",
 }
 
-def classify_ticket_with_confidence(query, threshold=0.5):
+def classify_ticket_with_confidence(query, threshold=0.6):
     # Tokenize input
     inputs = tokenizer.encode_plus(query, return_tensors="pt", truncation=True, max_length=128, padding="max_length")
     
