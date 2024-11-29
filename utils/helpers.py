@@ -1,4 +1,3 @@
-# Define predefined responses
 responses = {
     "Billing Issue": "It seems like you’re facing a billing issue. Please contact our billing department.",
     "Technical Issue": "This appears to be a technical issue. Restarting your device might help.",
