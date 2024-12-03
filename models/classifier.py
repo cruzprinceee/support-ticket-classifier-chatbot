@@ -60,7 +60,7 @@ def fine_tune_model(data):
     tokenizer.save_pretrained("./fine_tuned_model")
 
 # Load and preprocess data
-data = load_and_preprocess_data('data/customer_support_tickets.csv')
+data = load_and_preprocess_data('/content/support-ticket-classifier-chatbot/data/customer_support_tickets.csv')
 
 # Fine-tune the model
 fine_tune_model(data)
