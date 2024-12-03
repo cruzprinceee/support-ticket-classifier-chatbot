@@ -1,5 +1,6 @@
+transformers
+torch
 streamlit
 pandas
 scikit-learn
-transformers
-torch
+datasets
