@@ -1,6 +1,7 @@
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 from datasets import Dataset
 from transformers import Trainer, TrainingArguments
+from sklearn.preprocessing import LabelEncoder
 import torch
 import pandas as pd
 
@@ -21,11 +22,16 @@ def tokenize_function(examples):
     return tokenizer(examples['Ticket Description'], padding="max_length", truncation=True, max_length=128)
 
 def fine_tune_model(data):
-    # Convert to Hugging Face Dataset
     dataset = Dataset.from_pandas(data)
+    
+    # Tokenize with labels
+    def preprocess_data(examples):
+        tokens = tokenizer(examples['Ticket Description'], padding="max_length", truncation=True, max_length=128)
+        tokens['labels'] = examples['Ticket Type']  # Include labels for classification
+        return tokens
 
-    # Tokenize the dataset
-    tokenized_datasets = dataset.map(tokenize_function, batched=True)
+    # Apply the tokenization function
+    tokenized_datasets = dataset.map(preprocess_data, batched=True)
 
     # Define training arguments
     training_args = TrainingArguments(
@@ -54,7 +60,7 @@ def fine_tune_model(data):
     tokenizer.save_pretrained("./fine_tuned_model")
 
 # Load and preprocess data
-data = load_and_preprocess_data('path_to_your_file.csv')
+data = load_and_preprocess_data('data/customer_support_tickets.csv')
 
 # Fine-tune the model
 fine_tune_model(data)
