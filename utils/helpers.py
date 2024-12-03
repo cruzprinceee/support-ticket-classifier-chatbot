@@ -1,9 +1,9 @@
-# Predefined responses
-responses = {
-    0: "It seems like you’re facing a billing issue. Please contact our billing department.",
-    1: "This appears to be a technical issue. Restarting your device might help.",
-}
+from transformers import pipeline
+
+# Load a pre-trained language model
+nlp = pipeline("text-generation", model="gpt2")
 
 def chatbot_response(category, user_query):
-    return responses.get(category, "We’re here to assist you. Please provide more details!")
-
+    # Generate a response based on the user query
+    response = nlp(f"Category: {category}. User query: {user_query}", max_length=50, num_return_sequences=1)
+    return response[0]['generated_text']
